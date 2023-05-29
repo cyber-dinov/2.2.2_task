@@ -23,6 +23,6 @@ public class CarServiceImp implements CarService {
     @Override
     public List<Car> getCarsFromList(Integer count) {
 
-        return (count == null || count >=5) ? carList : carList.stream().filter(i -> carList.indexOf(i) < count).toList();
+        return (count == null || count >=5) ? carList : carList.stream().limit(count).toList();
     }
 }
